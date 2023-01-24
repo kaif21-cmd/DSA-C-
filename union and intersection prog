@@ -1,0 +1,62 @@
+// Kaif shaikh...........
+#include <iostream>
+using namespace std;
+void printunion(int ar1[],int ar2[],int m,int n)
+{
+    int i=0,j=0;
+    while(i<m&&j<n)
+    {
+        if(ar1[i]<ar2[j])
+        cout<<ar1[i++]<<" ";
+        else if (ar1[i]>ar2[j])
+        cout<<ar2[j++]<<" ";
+        else{
+            cout<<ar2[j++];
+            i++;
+        }
+    }
+    while(i<m)
+    cout<<ar1[i++]<<" ";
+    while(j<m)
+    cout<<ar2[j++]<<" ";
+}
+void printIntersection(int ar1[],int ar2[],int m,int n)
+{
+    int i=0,j=0;
+    while(i<m&&j<n)
+    {
+        if(ar1[i]<ar2[j])
+        i++;
+        else if(ar1[i]>ar2[j])
+        j++;
+        else
+        {
+            cout<<ar1[i]<<" ";
+            i++;
+            j++;
+        }
+    }
+}
+int main()
+{
+    int ar1[100],ar2[100],i,j,m,n;
+    cout<<"Enter the size of the 1array\n";
+    cin>>m;
+    cout<<"\nEnter the element in the 1array\n";
+    for(int i=0;i<m;i++)
+    {
+        cin>>ar1[i];
+    }
+    cout<<"Enter the size of 2nd array\n";
+    cin>>n;
+    cout<<"Enter the element in the 2array\n\n";
+    for(int j=0;j<n;j++)
+    {
+        cin>>ar2[j];
+    }
+    cout<<"UNION:\n ";
+    printunion(ar1,ar2,m,n);
+    cout<<"\nIntersection\n";
+    printIntersection(ar1,ar2,m,n);
+    return 0;
+}

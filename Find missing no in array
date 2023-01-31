@@ -1,0 +1,24 @@
+#include<iostream>
+using namespace std;
+int missing_no(int array[],int n)
+{
+    int sum_of_all_natural_no =(n*(n+1))/2;
+    int sum_of_array =0;
+    for(int i=0;i<n-1;i++)
+    {
+        sum_of_array +=array[i];
+    }
+    int missing_no =  sum_of_all_natural_no-sum_of_array;
+    return  missing_no;
+}
+int main()
+{
+    int n;
+    cout<<"Enter the size of the array\n";
+    cin>>n;
+    int numarray[n-1];
+    cout<<"\nEnter the numbers one by one in array\n";
+    for(int i=0;i<n-1;i++)
+    cin>>numarray[i];
+    cout<<"Missing number is :"<<missing_no(numarray,n);
+}
